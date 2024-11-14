@@ -1,4 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using Sistema_Reportes_Caidas.Infrastructure.Context;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//conexion ala base de datos
+var connectionString = builder.Configuration.GetConnectionString("Connection");
+builder.Services.AddDbContext<AppDbContext>(
+    options => options.UseSqlServer(connectionString)
+);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

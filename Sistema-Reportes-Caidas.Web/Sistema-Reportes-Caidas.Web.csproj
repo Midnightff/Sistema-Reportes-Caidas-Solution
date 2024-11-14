@@ -20,4 +20,8 @@
     <Folder Include="wwwroot\adminlte\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Sistema-Reportes-Caidas.Infrastructure\Sistema-Reportes-Caidas.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
