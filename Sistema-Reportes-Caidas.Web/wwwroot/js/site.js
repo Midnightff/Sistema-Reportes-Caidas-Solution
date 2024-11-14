@@ -1,4 +1,25 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿﻿let table = new DataTable('#dt2', {
+     pageLength: 5,
+     lengthMenu: [5, 10, 15, 20],
+     ordering: true,
+     pagingType: "full_numbers"
+ });
 
-// Write your JavaScript code.
+document.addEventListener("DOMContentLoaded", function () {
+    window.confirmarEliminacion = function (formId) {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "¡Esta acción no se puede deshacer!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Sí, eliminar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById(formId).submit();
+            }
+        });
+    };
+});

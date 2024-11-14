@@ -14,6 +14,6 @@ namespace Sistema_Reportes_Caidas.Domain.Entities
         [Required(ErrorMessage = "El nombre del sistema es obligatorio.")]
         [MinLength(3, ErrorMessage = "El nombre debe tener al menos 3 caracteres.")]
         [MaxLength(50, ErrorMessage = "El nombre no debe superar los 50 caracteres.")]
-        public string NombreSistema { get; set; }
+        public string? NombreSistema { get; set; }
     }
 }
